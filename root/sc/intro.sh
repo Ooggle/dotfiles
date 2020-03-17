@@ -1,0 +1,26 @@
+lxterminal -e bash -c "xinput;
+sleep 0.3;
+echo .;
+sleep 0.3;
+lsblk -a;
+sleep 0.3;
+echo .;
+sleep 0.3;
+echo .;
+sleep 0.3;
+echo .;
+sleep 0.8;
+clear;
+neofetch;
+uname -a;
+echo ;
+echo Welcome\ back,\ Ooggle.;
+sleep 0.3;
+echo .;
+sleep 0.3;
+echo .;
+sleep 0.3;
+echo .;
+sleep 0.3;
+echo ;
+exec bash"
