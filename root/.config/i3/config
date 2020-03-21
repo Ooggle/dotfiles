@@ -138,6 +138,9 @@ bindsym --release $mod+p exec --no-startup-id maim -i $(xdotool getactivewindow)
 # lockscreen
 bindsym $mod+l exec --no-startup-id /root/sc/lock.sh
 
+# explorer
+bindsym $mod+c exec --no-startup-id nemo
+
 # focus the child container
 #bindsym $mod+d focus child
 
@@ -253,14 +256,18 @@ hide_edge_borders both
 
 ## doesn't work as expected
 #remove G502 mouse acceleration
-exec --no-startup-id xinput set-prop "Logitech Gaming Mouse G502" "libinput Accel Profile Enabled" 0 0
+ #exec --no-startup-id xinput set-prop "Logitech Gaming Mouse G502" "libinput Accel Profile Enabled" 0 0
+exec --no-startup-id xinput set-prop 'Logitech Gaming Mouse G502' 'Coordinate Transformation Matrix' 3.200000, 0.000000, 0.000000, 0.000000, 3.200000, 0.000000, 0.000000, 0.000000, 1.000000
 #add touchpad speed
  #exec --no-startup-id xinput set-prop 16 300 0.7
+exec --no-startup-id synclient AccelFactor=0
+exec --no-startup-id synclient MinSpeed=2.0
+exec --no-startup-id ynclient TapButton1=1
 #accept touchpad tapping clic
  #exec --no-startup-id xinput set-prop 16 309 1
 
 #start xscreensaver no splash
-exec su -c "xscreensaver -no-splash &" ooggle
+#exec su -c "xscreensaver -no-splash &" ooggle
 
 #network manager
 exec --no-startup-id nm-applet
