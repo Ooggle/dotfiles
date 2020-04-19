@@ -31,7 +31,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec lxterminal
+bindsym $mod+Return exec rxvt-unicode
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -271,3 +271,9 @@ exec --no-startup-id ynclient TapButton1=1
 
 #network manager
 exec --no-startup-id nm-applet
+
+# gaps
+gaps inner 20
+
+# rxvt-unicode
+exec_always --no-startup-id xrdb ~/.Xressource
