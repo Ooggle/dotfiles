@@ -1,0 +1,17 @@
+URxvt*transparent: true
+URxvt*shading: 10
+
+URxvt*scrollBar: false
+
+URxvt*background: #FF0000
+URxvt*foreground: #00FFFF
+
+URxvt*font: xft:Monospace:pixelsize=14
+
+URxvt*keysym*Control-Up: \033[1;5A
+URxvt*keysym*Control-Down: \033[1;5B
+URxvt*keysym*Control-Left: \033[1;5D
+URxvt*keysym*Control-Right: \033[1;5C
+
+URxvt*keysym.Shift-Control-V: eval:paste_clipboard
+URxvt*keysym.Shift-Control-C: eval:selection_to_clipboard
