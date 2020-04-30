@@ -33,6 +33,7 @@ floating_modifier $mod
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec rxvt-unicode
 
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -187,6 +188,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# directly exit i3
+bindsym $mod+Shift+Mod1+e exec "i3-msg exit"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -239,41 +242,42 @@ bindsym XF86AudioPrev exec playerctl previous
 
 
 # set wallpaper
-exec --no-startup-id feh --bg-fill /root/.config/i3/background.png
+exec_always --no-startup-id feh --bg-fill /root/.config/i3/background.png
 # start pulseaudio
 exec --no-startup-id pulseaudio --start
 # transparency
-#exec --no-startup-id compton &
-exec --no-startup-id compton --config /root/.config/compton/compton.conf -b
+# exec --no-startup-id compton &
+# exec --no-startup-id compton --config /root/.config/compton/compton.conf -b
 # backup screenshots
 exec --no-startup-id mv /root/*.png /root/screens/
 # start (cool) welcome terminal
-exec --no-startup-id /root/sc/intro.sh
+# exec --no-startup-id /root/sc/intro.sh
+# rxvt-unicode
+exec_always --no-startup-id xrdb ~/.Xresources
+exec --no-startup-id rxvt-unicode
+
 # set chrome as default web browser
 exec --no-startup-id xdg-settings set default-web-browser chrome.desktop
 
 hide_edge_borders both 
 
 ## doesn't work as expected
-#remove G502 mouse acceleration
- #exec --no-startup-id xinput set-prop "Logitech Gaming Mouse G502" "libinput Accel Profile Enabled" 0 0
-exec --no-startup-id xinput set-prop 'Logitech Gaming Mouse G502' 'Coordinate Transformation Matrix' 3.200000, 0.000000, 0.000000, 0.000000, 3.200000, 0.000000, 0.000000, 0.000000, 1.000000
-#add touchpad speed
- #exec --no-startup-id xinput set-prop 16 300 0.7
+# remove G502 mouse acceleration
+# exec --no-startup-id xinput set-prop "Logitech Gaming Mouse G502" "libinput Accel Profile Enabled" 0 0
+#exec_always --no-startup-id xinput set-prop 'Logitech Gaming Mouse G502' 'Coordinate Transformation Matrix' 3.800000, 0.000000, 0.000000, 0.000000, 3.800000, 0.000000, 0.000000, 0.000000, 1.000000
+# add touchpad speed
+# exec --no-startup-id xinput set-prop 16 300 0.7
 exec --no-startup-id synclient AccelFactor=0
-exec --no-startup-id synclient MinSpeed=2.0
-exec --no-startup-id ynclient TapButton1=1
-#accept touchpad tapping clic
- #exec --no-startup-id xinput set-prop 16 309 1
+exec --no-startup-id synclient MinSpeed=1.5
+exec --no-startup-id synclient TapButton1=1
+# accept touchpad tapping clic
+# exec --no-startup-id xinput set-prop 16 309 1
 
-#start xscreensaver no splash
-#exec su -c "xscreensaver -no-splash &" ooggle
+# start xscreensaver no splash
+# exec su -c "xscreensaver -no-splash &" ooggle
 
-#network manager
+# network manager
 exec --no-startup-id nm-applet
 
 # gaps
 gaps inner 20
-
-# rxvt-unicode
-exec_always --no-startup-id xrdb ~/.Xressource
