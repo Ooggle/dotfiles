@@ -140,7 +140,7 @@ bindsym --release $mod+p exec --no-startup-id maim -i $(xdotool getactivewindow)
 bindsym $mod+l exec --no-startup-id /root/sc/lock.sh
 
 # explorer
-bindsym $mod+c exec --no-startup-id nemo
+bindsym $mod+c exec --no-startup-id urxvt -e bash -c "cf"
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -242,7 +242,9 @@ bindsym XF86AudioPrev exec playerctl previous
 
 
 # set wallpaper
-exec_always --no-startup-id feh --bg-fill /root/.config/i3/background.png
+# exec_always --no-startup-id feh --bg-fill /root/.config/i3/background.png
+exec_always --no-startup-id /root/sc/randwall.sh
+
 # start pulseaudio
 exec --no-startup-id pulseaudio --start
 # transparency
@@ -253,8 +255,8 @@ exec --no-startup-id mv /root/*.png /root/screens/
 # start (cool) welcome terminal
 # exec --no-startup-id /root/sc/intro.sh
 # rxvt-unicode
-exec_always --no-startup-id xrdb ~/.Xresources
-exec --no-startup-id rxvt-unicode
+exec_always --no-startup-id xrdb ~/.Xressources
+# exec --no-startup-id rxvt-unicode
 
 # set chrome as default web browser
 exec --no-startup-id xdg-settings set default-web-browser chrome.desktop
@@ -273,11 +275,14 @@ exec --no-startup-id synclient TapButton1=1
 # accept touchpad tapping clic
 # exec --no-startup-id xinput set-prop 16 309 1
 
-# start xscreensaver no splash
-# exec su -c "xscreensaver -no-splash &" ooggle
-
 # network manager
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # gaps
-gaps inner 20
+gaps inner 10
+
+# border radius
+border_radius 4
+
+# remove borders
+for_window [class="^.*"] border pixel 0
