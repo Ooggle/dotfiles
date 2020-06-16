@@ -20,6 +20,9 @@ unzip DroidSansMono.zip -d ~/.fonts
 fc-cache -fv
 rm -r DroidSansMono.zip
 
+# install noto font
+apt install fonts-noto-color-emoji
+
 # set chrome as default x web browser
 xdg-settings set default-web-browser chrome.desktop
 
