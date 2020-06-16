@@ -26,6 +26,14 @@ apt install fonts-noto-color-emoji
 # set chrome as default x web browser
 xdg-settings set default-web-browser chrome.desktop
 
+# install cfiles
+git clone https://github.com/mananapr/cfiles.git
+cd cfiles
+make
+make install
+ln -s /usr/bin/cfiles /usr/bin/cf
+cd .. && rm -r cfiles
+
 #remove folder after finished
 CURRENTDIR=$(pwd)
 cd ..
