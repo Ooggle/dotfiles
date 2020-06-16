@@ -3,8 +3,8 @@ URxvt*shading: 10
 
 URxvt*scrollBar: false
 
-URxvt*background: #FF0000
-URxvt*foreground: #00FFFF
+*.background: #000000
+*.foreground: #a2d5fa
 
 URxvt*font: xft:Monospace:pixelsize=14
 
