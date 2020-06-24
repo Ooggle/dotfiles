@@ -15,7 +15,7 @@ then
     xrandr --auto
     xrandr --output $display1 --auto --right-of $display2
     #reload wallpaper
-    feh --bg-fill /root/.config/i3/background.png
+    source ~/sc/randwall.sh
     exit
 fi
 
@@ -27,7 +27,7 @@ then
     xrandr --auto
     xrandr --output $display1 --auto --left-of $display2
     #reload wallpaper
-    feh --bg-fill /root/.config/i3/background.png
+    source ~/sc/randwall.sh
     exit
 fi
 
@@ -37,7 +37,7 @@ then
     echo "removing second screen"
     xrandr --output $display2 --off
     #reload wallpaper
-    feh --bg-fill /root/.config/i3/background.png
+    source ~/sc/randwall.sh
     exit
 fi
 
