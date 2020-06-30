@@ -7,7 +7,7 @@ echo "Please use this with a Ubuntu/Debian based distro."
 
 # install dependencies
 apt -y install i3blocks feh maim xclip pulseaudio rxvt-unicode \
-xserver-xorg-input-synaptics scrot ffmpeg imagemagick xdotool
+xserver-xorg-input-synaptics scrot ffmpeg imagemagick xdotool libncurses5-dev
 
 # move config files
 mv etc/ /
