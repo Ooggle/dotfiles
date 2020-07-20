@@ -21,11 +21,12 @@ apt -y install xorg i3 i3blocks
 # install dependencies
 apt -y install feh maim xclip pulseaudio rxvt-unicode \
 xserver-xorg-input-synaptics scrot ffmpeg imagemagick xdotool libncurses5-dev \
-git make xdg-utils pkg-config build-essential vim
+git make xdg-utils pkg-config build-essential vim pavucontrol
 
 # installing Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 apt -y install ./google-chrome-stable_current_amd64.deb
+rm google-chrome-stable_current_amd64.deb
 
 # move config files
 cp -r etc/ /
