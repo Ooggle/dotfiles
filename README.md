@@ -5,3 +5,11 @@
 
 # dotfiles
 a quick repo to store all my dotfiles, scripts and more.
+
+## Instructions
+
+```bash
+git clone https://github.com/Ooggle/dotfiles && cd dotfiles
+chmod 755 autoconfig.sh
+./autoconfig.sh
+```
