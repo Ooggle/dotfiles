@@ -1,13 +1,16 @@
 #!/bin/bash
 
 # intro
+echo "---------------------------------------------------"
 echo "- Auto configure script -"
 echo "This script need to run with root privileges."
 echo "Please use this with a Ubuntu/Debian based distro."
+echo "---------------------------------------------------"
 
 # install dependencies
 apt -y install i3blocks feh maim xclip pulseaudio rxvt-unicode \
-xserver-xorg-input-synaptics scrot ffmpeg imagemagick xdotool libncurses5-dev
+xserver-xorg-input-synaptics scrot ffmpeg imagemagick xdotool libncurses5-dev \
+git make xdg-utils
 
 # move config files
 mv etc/ /
@@ -38,4 +41,7 @@ cd .. && rm -r cfiles
 CURRENTDIR=$(pwd)
 cd ..
 rm -r $CURRENTDIR
+export PWD=$(pwd)
+echo "-----------------------"
 echo "Configuration complete."
+echo "-----------------------"
