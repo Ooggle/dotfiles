@@ -10,7 +10,7 @@ echo "---------------------------------------------------"
 # install dependencies
 apt -y install i3blocks feh maim xclip pulseaudio rxvt-unicode \
 xserver-xorg-input-synaptics scrot ffmpeg imagemagick xdotool libncurses5-dev \
-git make xdg-utils pkg-config
+git make xdg-utils pkg-config build-essential
 
 # move config files
 mv etc/ /
