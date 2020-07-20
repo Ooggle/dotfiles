@@ -1,12 +1,19 @@
 #!/bin/bash
 
 # intro
-echo "---------------------------------------------------"
-echo "- Auto configure script -"
-echo "This script need to run with root privileges."
+echo ""
+echo "--------------------------------------------------"
+echo "            - Auto configure script -"
+echo "   This script need to run with root privileges."
 echo "Please use this with a Ubuntu/Debian based distro."
-echo "---------------------------------------------------"
+echo "--------------------------------------------------"
+echo ""
 
+echo ""
+echo "--------------------------------------------------"
+echo "           - Installing dependencies -"
+echo "--------------------------------------------------"
+echo ""
 # install dependencies
 apt -y install i3blocks feh maim xclip pulseaudio rxvt-unicode \
 xserver-xorg-input-synaptics scrot ffmpeg imagemagick xdotool libncurses5-dev \
@@ -37,12 +44,11 @@ make install
 ln -s /usr/bin/cfiles /usr/bin/cf
 cd .. && rm -r cfiles
 
-#remove folder after finished
-CURRENTDIR=$(pwd)
-cd ..
-rm -r $CURRENTDIR
-export PWD=$(pwd)
-echo $(pwd)
-echo "-----------------------"
-echo "Configuration complete."
-echo "-----------------------"
+#CURRENTDIR=$(pwd)
+#cd ..
+#rm -r $CURRENTDIR
+
+echo "-------------------------------"
+echo "    Configuration complete."
+echo "You can now remove this folder."
+echo "-------------------------------"
