@@ -32,6 +32,11 @@ cp -r etc/ /
 cp -r root/ /
 cp -r usr/ /
 
+# install shortcuts
+install usr/bin/chrome /usr/bin/chrome
+install usr/bin/discord /usr/bin/discord
+install usr/bin/vscode /usr/bin/vscode
+
 # install nerd fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DroidSansMono.zip
 unzip DroidSansMono.zip -d ~/.fonts
