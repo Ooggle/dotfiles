@@ -14,15 +14,23 @@ echo "--------------------------------------------------"
 echo "           - Installing dependencies -"
 echo "--------------------------------------------------"
 echo ""
+
+# install base dependencies
+apt -y install xorg i3 i3blocks
+
 # install dependencies
-apt -y install i3blocks feh maim xclip pulseaudio rxvt-unicode \
+apt -y install feh maim xclip pulseaudio rxvt-unicode \
 xserver-xorg-input-synaptics scrot ffmpeg imagemagick xdotool libncurses5-dev \
-git make xdg-utils pkg-config build-essential
+git make xdg-utils pkg-config build-essential vim
+
+# installing Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+apt -y install ./google-chrome-stable_current_amd64.deb
 
 # move config files
-mv etc/ /
-mv root/ /
-mv usr/ /
+cp -r etc/ /
+cp -r root/ /
+cp -r usr/ /
 
 # install nerd fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DroidSansMono.zip
