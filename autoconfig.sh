@@ -41,7 +41,7 @@ git clone https://github.com/mananapr/cfiles.git
 cd cfiles
 make
 make install
-ln -s /usr/bin/cfiles /usr/bin/cf
+ln -s -f /usr/bin/cfiles /usr/bin/cf
 cd .. && rm -r cfiles
 
 #CURRENTDIR=$(pwd)
