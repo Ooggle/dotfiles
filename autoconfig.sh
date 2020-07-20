@@ -10,7 +10,7 @@ echo "---------------------------------------------------"
 # install dependencies
 apt -y install i3blocks feh maim xclip pulseaudio rxvt-unicode \
 xserver-xorg-input-synaptics scrot ffmpeg imagemagick xdotool libncurses5-dev \
-git make xdg-utils
+git make xdg-utils pkg-config
 
 # move config files
 mv etc/ /
@@ -42,6 +42,7 @@ CURRENTDIR=$(pwd)
 cd ..
 rm -r $CURRENTDIR
 export PWD=$(pwd)
+echo $(pwd)
 echo "-----------------------"
 echo "Configuration complete."
 echo "-----------------------"
