@@ -22,7 +22,9 @@ apt -y install xorg i3 i3blocks
 apt -y install feh maim scrot xclip pulseaudio rxvt-unicode \
 xserver-xorg-input-synaptics ffmpeg imagemagick xdotool libncurses5-dev \
 git make xdg-utils pkg-config build-essential vim pavucontrol lxappearance \
-gtk2-engines-murrine gtk2-engines-pixbuf ncdu gparted
+gtk2-engines-murrine gtk2-engines-pixbuf ncdu gparted python3 python3-pip
+
+pip3 install ueberzug
 
 # installing Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -54,6 +56,12 @@ make install
 cd ../..
 rm -r i3
 
+apt -y remove libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb1-dev \
+libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev \
+libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev \
+libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm-dev libxcb-shape0-dev
+apt -y autoremove
+
 # Vimix theme
 
 echo ""
@@ -84,6 +92,7 @@ cp -r usr/ /
 install usr/bin/chrome /usr/bin/chrome
 install usr/bin/discord /usr/bin/discord
 install usr/bin/vscode /usr/bin/vscode
+ln -s /usr/bin/python3 /usr/bin/py
 
 # install nerd fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DroidSansMono.zip

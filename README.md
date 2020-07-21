@@ -34,12 +34,14 @@ git clone https://github.com/Ooggle/dotfiles && cd dotfiles
 | xdotool                      | command-line X11 automation tool |
 | git                          |                                  |
 | build-essential              |                                  |
+| python3                      |                                  |
 | vim                          | cli text editor                  |
 | pavucontrol                  | pulseaudio sound manager         |
 | lxappearance                 | gui gtk themes manager           |
 | cfiles (cf)                  | cli file manager                 |
 | ncdu                         | cli disk usage tool              |
 | gparted                      | gui partitions manager           |
+| ueberzug                     | cli terminal image display tool  |
 
 
 ## Scripts
