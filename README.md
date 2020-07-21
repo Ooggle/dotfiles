@@ -13,7 +13,7 @@ git clone https://github.com/Ooggle/dotfiles && cd dotfiles
 ./autoconfig.sh
 ```
 
-## Installed softwares
+## Installed softwares
 
 
 | Application name             | Description                      |

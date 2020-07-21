@@ -71,12 +71,12 @@ echo "--------------------------------------------------"
 echo ""
 
 git clone https://github.com/vinceliuice/vimix-gtk-themes && cd vimix-gtk-themes
-./install -t ruby
+./install.sh -t ruby
 cd ..
 rm -r vimix-gtk-themes
 
 git clone https://github.com/vinceliuice/vimix-icon-theme && cd vimix-icon-theme
-./install -a
+./install.sh -a
 cd ..
 rm -r vimix-icon-theme
 
