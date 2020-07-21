@@ -36,7 +36,7 @@ echo "            - Installing i3 Rounded -"
 echo "--------------------------------------------------"
 echo ""
 
-apt install dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev \
+apt -y install dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev \
 xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev \
 libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev \
 libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev \
@@ -87,7 +87,9 @@ cd .. && rm -r cfiles
 #cd ..
 #rm -r $CURRENTDIR
 
-echo "-------------------------------"
-echo "    Configuration complete."
-echo "You can now remove this folder."
-echo "-------------------------------"
+echo ""
+echo "--------------------------------------------------"
+echo "             Configuration complete."
+echo "         You can now remove this folder."
+echo "--------------------------------------------------"
+echo ""
