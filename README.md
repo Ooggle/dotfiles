@@ -5,7 +5,8 @@
 
 # dotfiles
 a repo to store all my dotfiles, scripts and more.
-Contain also a installer to setup a whole Ubuntu/Debian based system in the minute!
+
+Also contain a installer to setup a whole Ubuntu/Debian based system in a minute!
 
 ![screenshot](https://raw.githubusercontent.com/Ooggle/dotfiles/master/preview.png)
 
