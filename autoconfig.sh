@@ -28,6 +28,31 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 apt -y install ./google-chrome-stable_current_amd64.deb
 rm google-chrome-stable_current_amd64.deb
 
+# i3 rounded corners
+
+echo ""
+echo "--------------------------------------------------"
+echo "            - Installing i3 Rounded -"
+echo "--------------------------------------------------"
+echo ""
+
+apt install dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev \
+xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev \
+libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev \
+libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev \
+libxcb-shape0 libxcb-shape0-dev
+
+git clone https://github.com/resloved/i3/ && cd i3
+autoreconf --force --install
+rm -rf build/
+mkdir -p build && cd build/
+
+../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+make -j8
+make install
+cd ../..
+rm -r i3
+
 # move config files
 cp -r etc/ /
 cp -r root/ /
