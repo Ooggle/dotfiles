@@ -4,7 +4,10 @@
 [![img last release](https://img.shields.io/twitter/follow/Ooggule.svg?style=social)](https://twitter.com/Ooggule)
 
 # dotfiles
-a quick repo to store all my dotfiles, scripts and more.
+a repo to store all my dotfiles, scripts and more.
+Contain also a installer to setup a whole Ubuntu/Debian based system in the minute!
+
+![screenshot](https://raw.githubusercontent.com/Ooggle/dotfiles/master/preview.png)
 
 ## Instructions
 
