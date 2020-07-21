@@ -37,9 +37,6 @@ bindsym $mod+Return exec rxvt-unicode
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-
-
 # class                 border  bground text    indicator child_border
 client.focused          #23272A #23272A #FFFFFF #7289DA   #7289DA
 client.focused_inactive #23272A #23272A #FFFFFF #7289DA   #7289DA
@@ -139,8 +136,10 @@ bindsym --release $mod+p exec --no-startup-id maim -i $(xdotool getactivewindow)
 # lockscreen
 bindsym $mod+l exec --no-startup-id /root/sc/lock.sh
 
-# explorer
+# term explorer
 bindsym $mod+c exec --no-startup-id urxvt -e bash -c "cf"
+# explorer
+bindsym $mod+alt+c exec --no-startup-id nemo
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -255,7 +254,7 @@ exec --no-startup-id mv /root/*.png /root/screens/
 # start (cool) welcome terminal
 # exec --no-startup-id /root/sc/intro.sh
 # rxvt-unicode
-exec_always --no-startup-id xrdb ~/.Xressources
+exec_always --no-startup-id xrdb ~/.Xresources
 # exec --no-startup-id rxvt-unicode
 
 # set chrome as default web browser
@@ -286,3 +285,4 @@ border_radius 4
 
 # remove borders
 for_window [class="^.*"] border pixel 0
+

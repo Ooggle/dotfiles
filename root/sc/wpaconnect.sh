@@ -6,6 +6,7 @@ then
     echo "exiting..."
     exit
 else
+    killall wpa_supplicant & killall dhclient
     wpa_supplicant -D nl80211 -B -i wlp2s0 -c $1
     dhclient wlp2s0
     exit
