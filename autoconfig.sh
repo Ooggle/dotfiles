@@ -21,7 +21,8 @@ apt -y install xorg i3 i3blocks
 # install dependencies
 apt -y install feh maim xclip pulseaudio rxvt-unicode \
 xserver-xorg-input-synaptics scrot ffmpeg imagemagick xdotool libncurses5-dev \
-git make xdg-utils pkg-config build-essential vim pavucontrol
+git make xdg-utils pkg-config build-essential vim pavucontrol lxappearance \
+gtk2-engines-murrine gtk2-engines-pixbuf
 
 # installing Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -40,7 +41,7 @@ apt -y install dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-de
 xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev \
 libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev \
 libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev \
-libxcb-shape0 libxcb-shape0-dev
+libxcb-shape0 libxcb-shape0-dev ncdu
 
 git clone https://github.com/resloved/i3/ && cd i3
 autoreconf --force --install
@@ -52,6 +53,27 @@ make -j8
 make install
 cd ../..
 rm -r i3
+
+# Vimix theme
+
+echo ""
+echo "--------------------------------------------------"
+echo "           - Installing Vimix Theme -"
+echo "--------------------------------------------------"
+echo ""
+
+git clone https://github.com/vinceliuice/vimix-gtk-themes && cd vimix-gtk-themes
+./install -t ruby
+cd ..
+rm -r vimix-gtk-themes
+
+git clone https://github.com/vinceliuice/vimix-icon-theme && cd vimix-icon-theme
+./install -a
+cd ..
+rm -r vimix-icon-theme
+
+sed -i 's/gtk-theme-name=.*/gtk-theme-name=vimix-dark-ruby/g' ~/.config/gtk-3.0/settings.ini
+sed -i 's/gtk-icon-theme=.*/gtk-icon-theme=Vimix-Ruby-dark/g' ~/.config/gtk-3.0/settings.ini
 
 # move config files
 cp -r etc/ /
