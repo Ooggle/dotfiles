@@ -1,3 +1,3 @@
 #!/bin/bash
-mv /root/*.png /root/screens/
+mv ~/*.png ~/screens/
 echo "backup successfull."

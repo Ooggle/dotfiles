@@ -124,17 +124,17 @@ bindsym $mod+a focus parent
 
 # make a screen capture, copy it in the clipboard
 #bindcode 107 exec --no-startup-id scrot && tmpimg=$(ls -tr | grep -v / | tail -n 1) && xclip -selection clipboard -t image/png -i $tmpimg && unset tmpimg
-bindcode 107 exec --no-startup-id maim $(date +"%Y-%m-%d-%H%M%S") && mv /root/$(ls -tr | grep -v / | tail -n 1) /root/$(ls -tr | grep -v / | tail -n 1)_$(identify -format '%wx%h' $(ls -tr | grep -v / | tail -n 1)).png && xclip -selection clipboard -t image/png -i /root/$(ls -tr | grep -v / | tail -n 1)
+bindcode 107 exec --no-startup-id maim $(date +"%Y-%m-%d-%H%M%S") && mv ~/$(ls -tr | grep -v / | tail -n 1) ~/$(ls -tr | grep -v / | tail -n 1)_$(identify -format '%wx%h' $(ls -tr | grep -v / | tail -n 1)).png && xclip -selection clipboard -t image/png -i ~/$(ls -tr | grep -v / | tail -n 1)
 
 # make a part screen capture, copy it in the clipboard
-#bindsym --release $mod+Print exec --no-startup-id scrot -s && tmpimg=$(ls -tr /root | grep -v / | tail -n 1) && xclip -selection clipboard -t image/png -i $tmpimg && unset tmpimg
-bindsym --release Control+Print exec --no-startup-id maim -s $(date +"%Y-%m-%d-%H%M%S") && mv /root/$(ls -tr | grep -v / | tail -n 1) /root/$(ls -tr | grep -v / | tail -n 1)_$(identify -format '%wx%h' $(ls -tr | grep -v / | tail -n 1)).png && xclip -selection clipboard -t image/png -i /root/$(ls -tr | grep -v / | tail -n 1)
+#bindsym --release $mod+Print exec --no-startup-id scrot -s && tmpimg=$(ls -tr ~/ | grep -v / | tail -n 1) && xclip -selection clipboard -t image/png -i $tmpimg && unset tmpimg
+bindsym --release Control+Print exec --no-startup-id maim -s $(date +"%Y-%m-%d-%H%M%S") && mv ~/$(ls -tr | grep -v / | tail -n 1) ~/$(ls -tr | grep -v / | tail -n 1)_$(identify -format '%wx%h' $(ls -tr | grep -v / | tail -n 1)).png && xclip -selection clipboard -t image/png -i ~/$(ls -tr | grep -v / | tail -n 1)
 
 # make a current application screen capture, copy it in the clipboard
-bindsym --release $mod+p exec --no-startup-id maim -i $(xdotool getactivewindow) $(date +"%Y-%m-%d-%H%M%S") && mv /root/$(ls -tr | grep -v / | tail -n 1) /root/$(ls -tr | grep -v / | tail -n 1)_$(identify -format '%wx%h' $(ls -tr | grep -v / | tail -n 1)).png && xclip -selection clipboard -t image/png -i /root/$(ls -tr | grep -v / | tail -n 1)
+bindsym --release $mod+p exec --no-startup-id maim -i $(xdotool getactivewindow) $(date +"%Y-%m-%d-%H%M%S") && mv ~/$(ls -tr | grep -v / | tail -n 1) ~/$(ls -tr | grep -v / | tail -n 1)_$(identify -format '%wx%h' $(ls -tr | grep -v / | tail -n 1)).png && xclip -selection clipboard -t image/png -i ~/$(ls -tr | grep -v / | tail -n 1)
 
 # lockscreen
-bindsym $mod+l exec --no-startup-id /root/sc/lock.sh
+bindsym $mod+l exec --no-startup-id ~/sc/lock.sh
 
 # term explorer
 bindsym $mod+c exec --no-startup-id urxvt -e bash -c "cf"
@@ -230,8 +230,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec /root/sc/brightness.sh +7 # increase screen brightness
-bindsym XF86MonBrightnessDown exec /root/sc/brightness.sh -7 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec ~/sc/brightness.sh +7 # increase screen brightness
+bindsym XF86MonBrightnessDown exec ~/sc/brightness.sh -7 # decrease screen brightness
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -241,18 +241,19 @@ bindsym XF86AudioPrev exec playerctl previous
 
 
 # set wallpaper
-# exec_always --no-startup-id feh --bg-fill /root/.config/i3/background.png
-exec_always --no-startup-id /root/sc/randwall.sh
+# exec_always --no-startup-id feh --bg-fill ~/.config/i3/background.png
+exec_always --no-startup-id ~/sc/randwall.sh
 
 # start pulseaudio
 exec --no-startup-id pulseaudio --start
 # transparency
 # exec --no-startup-id compton &
-# exec --no-startup-id compton --config /root/.config/compton/compton.conf -b
+# exec --no-startup-id compton --config ~/.config/compton/compton.conf -b
 # backup screenshots
-exec --no-startup-id mv /root/*.png /root/screens/
+exec --no-startup-id mkdir -p ~/screens/
+exec --no-startup-id mv ~/*.png ~/screens/
 # start (cool) welcome terminal
-# exec --no-startup-id /root/sc/intro.sh
+# exec --no-startup-id ~/sc/intro.sh
 # rxvt-unicode
 exec_always --no-startup-id xrdb ~/.Xresources
 # exec --no-startup-id rxvt-unicode

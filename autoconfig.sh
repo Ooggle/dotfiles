@@ -85,7 +85,7 @@ sed -i 's/gtk-icon-theme=.*/gtk-icon-theme=Vimix-Ruby-dark/g' ~/.config/gtk-3.0/
 
 # move config files
 cp -r etc/ /
-cp -r root/ /
+cp -r home_folder/ ~/
 cp -r usr/ /
 
 # install shortcuts
