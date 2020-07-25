@@ -13,8 +13,9 @@ Also contain a installer to setup a whole Ubuntu/Debian based system in a minute
 ## Instructions
 
 ```bash
+sudo apt install git
 git clone https://github.com/Ooggle/dotfiles && cd dotfiles
-./autoconfig.sh
+sudo ./autoconfig.sh
 ```
 
 ## Installed softwares
