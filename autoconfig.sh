@@ -22,7 +22,7 @@ apt -y install xorg i3 i3blocks
 apt -y install feh maim scrot xclip pulseaudio rxvt-unicode \
 xserver-xorg-input-synaptics ffmpeg imagemagick xdotool libncurses5-dev \
 git make xdg-utils pkg-config build-essential vim pavucontrol lxappearance \
-gtk2-engines-murrine gtk2-engines-pixbuf ncdu gparted python3 python3-pip
+gtk2-engines-murrine gtk2-engines-pixbuf ncdu gparted python3 python3-pip xinput
 
 pip3 install ueberzug
 
