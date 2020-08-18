@@ -48,6 +48,9 @@ client.background       #FFFFFF
 
 # use i3blocks
 bar {
+  colors {
+    background #23272A
+  }
   status_command i3blocks
 }
 
