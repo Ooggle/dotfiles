@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# change this variable to use your own terminal (default is urxvt (rxvt-unicode))
+installterm=urxvt
+
 # intro
 echo ""
 echo "--------------------------------------------------"
@@ -22,7 +25,8 @@ apt -y install xorg i3 i3blocks
 apt -y install feh maim scrot xclip pulseaudio rxvt-unicode \
 xserver-xorg-input-synaptics ffmpeg imagemagick xdotool libncurses5-dev \
 git make xdg-utils pkg-config build-essential vim pavucontrol lxappearance \
-gtk2-engines-murrine gtk2-engines-pixbuf ncdu gparted python3 python3-pip xinput
+gtk2-engines-murrine gtk2-engines-pixbuf ncdu gparted python3 python3-pip xinput \
+gsettings-desktop-schemas nemo
 
 pip3 install ueberzug
 
@@ -83,6 +87,12 @@ rm -r vimix-icon-theme
 sed -i 's/gtk-theme-name=.*/gtk-theme-name=vimix-dark-ruby/g' ~/.config/gtk-3.0/settings.ini
 sed -i 's/gtk-icon-theme=.*/gtk-icon-theme=Vimix-Ruby-dark/g' ~/.config/gtk-3.0/settings.ini
 
+echo ""
+echo "--------------------------------------------------"
+echo "                - Other configs -"
+echo "--------------------------------------------------"
+echo ""
+
 # move config files
 cp -r etc/ /
 cp -r home_folder/ ~/
@@ -105,6 +115,9 @@ apt install fonts-noto-color-emoji
 
 # set chrome as default x web browser
 xdg-settings set default-web-browser chrome.desktop
+
+# set nemo "open in terminal context menu"
+gsettings set org.cinnamon.desktop.default-applications.terminal exec $installterm
 
 # install cfiles
 git clone https://github.com/mananapr/cfiles.git
