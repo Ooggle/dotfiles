@@ -58,7 +58,7 @@ mkdir -p build && cd build/
 make -j8
 make install
 cd ../..
-rm -r i3
+rm -rf i3
 
 apt -y remove libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb1-dev \
 libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev \
@@ -77,12 +77,12 @@ echo ""
 git clone https://github.com/vinceliuice/vimix-gtk-themes && cd vimix-gtk-themes
 ./install.sh -t ruby
 cd ..
-rm -r vimix-gtk-themes
+rm -rf vimix-gtk-themes
 
 git clone https://github.com/vinceliuice/vimix-icon-theme && cd vimix-icon-theme
 ./install.sh -a
 cd ..
-rm -r vimix-icon-theme
+rm -rf vimix-icon-theme
 
 sed -i 's/gtk-theme-name=.*/gtk-theme-name=vimix-dark-ruby/g' ~/.config/gtk-3.0/settings.ini
 sed -i 's/gtk-icon-theme=.*/gtk-icon-theme=Vimix-Ruby-dark/g' ~/.config/gtk-3.0/settings.ini
