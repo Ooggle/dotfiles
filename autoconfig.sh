@@ -94,9 +94,12 @@ echo "--------------------------------------------------"
 echo ""
 
 # move config files
-cp -r etc/ /
-cp -r home_folder/* ~/
-cp -r usr/ /
+(cd etc/ && tar c .) | (cd /etc/ && sudo tar xf -)
+rm -rf etc/
+(cd home_folder/ && tar c .) | (cd /usr/ && sudo tar xf -)
+rm -rf home_folder/
+(cd usr/ && tar c .) | (cd /etc/ && sudo tar xf -)
+rm -rf etc/
 
 # install shortcuts
 install usr/bin/chrome /usr/bin/chrome
