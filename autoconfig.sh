@@ -95,7 +95,7 @@ echo ""
 
 # move config files
 cp -r etc/ /
-cp -r home_folder/ ~/
+cp -r home_folder/* ~/
 cp -r usr/ /
 
 # install shortcuts
