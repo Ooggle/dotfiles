@@ -109,9 +109,9 @@ ln -s /usr/bin/python3 /usr/bin/py
 
 # install nerd fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DroidSansMono.zip
-unzip DroidSansMono.zip -d ~/.fonts
+unzip -o DroidSansMono.zip -d ~/.fonts
 fc-cache -fv
-rm -r DroidSansMono.zip
+rm -f DroidSansMono.zip
 
 # install noto font
 apt install fonts-noto-color-emoji
