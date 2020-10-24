@@ -48,6 +48,8 @@ cd .. && rm -r dotfiles
 | ncdu                         | cli disk usage tool              |
 | gparted                      | gui partitions manager           |
 | ueberzug                     | cli terminal image display tool  |
+| geany                        | lightweight gui text editor      |
+| rofi                         | alternative to dmenu             |
 
 
 ## Scripts
