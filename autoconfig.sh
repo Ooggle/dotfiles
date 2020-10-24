@@ -26,7 +26,7 @@ apt -y install feh maim scrot xclip pulseaudio rxvt-unicode \
 xserver-xorg-input-synaptics ffmpeg imagemagick xdotool libncurses5-dev \
 git make xdg-utils pkg-config build-essential vim pavucontrol lxappearance \
 gtk2-engines-murrine gtk2-engines-pixbuf ncdu gparted python3 python3-pip xinput \
-gsettings-desktop-schemas nemo rsync rofi
+gsettings-desktop-schemas nemo rsync rofi geany
 
 pip3 install ueberzug
 
