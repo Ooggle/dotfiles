@@ -26,7 +26,7 @@ apt -y install feh maim scrot xclip pulseaudio rxvt-unicode \
 xserver-xorg-input-synaptics ffmpeg imagemagick xdotool libncurses5-dev \
 git make xdg-utils pkg-config build-essential vim pavucontrol lxappearance \
 gtk2-engines-murrine gtk2-engines-pixbuf ncdu gparted python3 python3-pip xinput \
-gsettings-desktop-schemas nemo
+gsettings-desktop-schemas nemo rsync rofi
 
 pip3 install ueberzug
 
@@ -94,18 +94,23 @@ echo "--------------------------------------------------"
 echo ""
 
 # move config files
-(cd etc/ && tar c .) | (cd /etc/ && sudo tar xf -)
+rsync -a --progress --remove-source-files etc/ /etc/
 rm -rf etc/
-(cd home_folder/ && tar c .) | (cd /usr/ && sudo tar xf -)
+
+chown ooggle:ooggle -R home_folder/
+rsync -a --progress --remove-source-files home_folder/ ~/
 rm -rf home_folder/
-(cd usr/ && tar c .) | (cd /etc/ && sudo tar xf -)
-rm -rf etc/
+
+chown ooggle:ooggle usr/share/applications/chrome.desktop
+mv usr/share/applications/chrome.desktop /usr/share/applications/chrome.desktop
 
 # install shortcuts
 install usr/bin/chrome /usr/bin/chrome
 install usr/bin/discord /usr/bin/discord
 install usr/bin/vscode /usr/bin/vscode
 ln -s /usr/bin/python3 /usr/bin/py
+
+rm -rf etc/
 
 # install nerd fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DroidSansMono.zip
