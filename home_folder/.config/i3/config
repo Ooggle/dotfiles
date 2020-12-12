@@ -37,6 +37,10 @@ bindsym $mod+Return exec rxvt-unicode
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# Scratchpad bindings
+bindsym $mod+Ctrl+Down move scratchpad
+bindsym $mod+Ctrl+Up scratchpad show
+
 # class                 border  bground text    indicator child_border
 client.focused          #23272A #23272A #FFFFFF #7289DA   #7289DA
 client.focused_inactive #23272A #23272A #FFFFFF #7289DA   #7289DA
