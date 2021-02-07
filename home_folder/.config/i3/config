@@ -252,7 +252,8 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always --no-startup-id ~/sc/randwall.sh
 
 # start pulseaudio
-exec --no-startup-id pulseaudio --start
+# exec --no-startup-id pulseaudio --start
+
 # transparency
 # exec --no-startup-id compton &
 # exec --no-startup-id compton --config ~/.config/compton/compton.conf -b
