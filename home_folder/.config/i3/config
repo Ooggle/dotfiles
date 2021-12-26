@@ -143,10 +143,8 @@ bindsym --release $mod+p exec --no-startup-id maim -i $(xdotool getactivewindow)
 # lockscreen
 bindsym $mod+l exec --no-startup-id ~/sc/lock.sh
 
-# term explorer
-bindsym $mod+c exec --no-startup-id urxvt -e bash -c "cf"
-# explorer
-bindsym $mod+alt+c exec --no-startup-id nemo
+# file explorer
+bindsym $mod+c exec --no-startup-id nemo
 
 # focus the child container
 #bindsym $mod+d focus child
