@@ -39,7 +39,7 @@ rm google-chrome-stable_current_amd64.deb
 
 echo ""
 echo "--------------------------------------------------"
-echo "            - Installing i3 Rounded -"
+echo "            - Installing i3 Gaps -"
 echo "--------------------------------------------------"
 echo ""
 
@@ -49,7 +49,7 @@ libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev \
 libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev \
 libxcb-shape0 libxcb-shape0-dev
 
-git clone https://github.com/resloved/i3/ && cd i3
+git clone https://github.com/Airblader/i3/ && cd i3
 autoreconf --force --install
 rm -rf build/
 mkdir -p build && cd build/
@@ -84,8 +84,8 @@ git clone https://github.com/vinceliuice/vimix-icon-theme && cd vimix-icon-theme
 cd ..
 rm -rf vimix-icon-theme
 
-sed -i 's/gtk-theme-name=.*/gtk-theme-name=vimix-dark-ruby/g' ~/.config/gtk-3.0/settings.ini
-sed -i 's/gtk-icon-theme=.*/gtk-icon-theme=Vimix-Ruby-dark/g' ~/.config/gtk-3.0/settings.ini
+sed -i 's/gtk-theme-name=.*/gtk-theme-name=vimix-dark-ruby/g' /home/ooggle/.config/gtk-3.0/settings.ini
+sed -i 's/gtk-icon-theme=.*/gtk-icon-theme=Vimix-Ruby-dark/g' /home/ooggle/.config/gtk-3.0/settings.ini
 
 echo ""
 echo "--------------------------------------------------"
@@ -98,7 +98,7 @@ rsync -a --progress --remove-source-files etc/ /etc/
 rm -rf etc/
 
 chown ooggle:ooggle -R home_folder/
-rsync -a --progress --remove-source-files home_folder/ ~/
+rsync -a --progress --remove-source-files home_folder/ /home/ooggle/
 rm -rf home_folder/
 
 chown ooggle:ooggle usr/share/applications/chrome.desktop
@@ -114,7 +114,7 @@ rm -rf etc/
 
 # install nerd fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DroidSansMono.zip
-unzip -o DroidSansMono.zip -d ~/.fonts
+unzip -o DroidSansMono.zip -d /home/ooggle/.fonts
 fc-cache -fv
 rm -f DroidSansMono.zip
 
