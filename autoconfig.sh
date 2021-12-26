@@ -30,11 +30,6 @@ gsettings-desktop-schemas nemo rsync rofi geany libnotify-bin
 
 pip3 install ueberzug
 
-# installing Chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-apt -y install ./google-chrome-stable_current_amd64.deb
-rm google-chrome-stable_current_amd64.deb
-
 # i3 rounded corners
 
 echo ""
