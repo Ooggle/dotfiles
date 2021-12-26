@@ -7,10 +7,13 @@ then
     exit
 fi
 
+#display1=$(xrandr --listmonitors | grep -Eo '[A-Za-z]+\-1$' -m1)
+#display2=$(xrandr --listmonitors | grep -Eo '[A-Za-z]+\-1$' -m2 | tail -n1)
+display1=eDP-1-0
+display2=HDMI-0
+
 if [ $1 = "dleft" ]
 then
-    display1=$(xrandr --listmonitors | grep -Eo '[A-Za-z]+\-1$' -m1)
-    display2=$(xrandr --listmonitors | grep -Eo '[A-Za-z]+\-1$' -m2 | tail -n1)
     echo "setting second screen to left screen"
     xrandr --auto
     xrandr --output $display1 --auto --right-of $display2
@@ -21,8 +24,6 @@ fi
 
 if [ $1 = "dright" ]
 then
-    display1=$(xrandr --listmonitors | grep -Eo '[A-Za-z]+\-1$' -m1)
-    display2=$(xrandr --listmonitors | grep -Eo '[A-Za-z]+\-1$' -m2 | tail -n1)
     echo "setting second screen to right screen"
     xrandr --auto
     xrandr --output $display1 --auto --left-of $display2
@@ -33,7 +34,6 @@ fi
 
 if [ $1 = "none" ]
 then
-    display2=$(xrandr --listmonitors | grep -Eo '[A-Za-z]+\-1$' -m2 | tail -n1)
     echo "removing second screen"
     xrandr --output $display2 --off
     #reload wallpaper
