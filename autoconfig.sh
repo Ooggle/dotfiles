@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # change this variable to use your own terminal (default is urxvt (rxvt-unicode))
-installterm=urxvt
+installterm=rxvt-unicode
 
 # intro
 echo ""
@@ -121,14 +121,6 @@ xdg-settings set default-web-browser chrome.desktop
 
 # set nemo "open in terminal context menu"
 gsettings set org.cinnamon.desktop.default-applications.terminal exec $installterm
-
-# install cfiles
-git clone https://github.com/mananapr/cfiles.git
-cd cfiles
-make
-make install
-ln -s -f /usr/bin/cfiles /usr/bin/cf
-cd .. && rm -r cfiles
 
 #CURRENTDIR=$(pwd)
 #cd ..
