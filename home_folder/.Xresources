@@ -6,6 +6,8 @@ URxvt*scrollBar: false
 *.background: #000000
 *.foreground: #a2d5fa
 
+Xcursor.size: 24
+
 URxvt*font: xft:Monospace:pixelsize=12
 
 URxvt*keysym*Control-Up: \033[1;5A
