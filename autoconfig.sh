@@ -29,7 +29,7 @@ apt -y install feh maim scrot xclip light pulseaudio rxvt-unicode \
 xserver-xorg-input-synaptics ffmpeg imagemagick xdotool libncurses5-dev \
 git make xdg-utils pkg-config build-essential vim pavucontrol lxappearance \
 gtk2-engines-murrine gtk2-engines-pixbuf ncdu gparted python3 python3-pip xinput \
-gsettings-desktop-schemas nemo rsync rofi geany libnotify-bin
+gsettings-desktop-schemas nemo rsync rofi geany libnotify-bin playerctl
 
 pip3 install ueberzug
 
