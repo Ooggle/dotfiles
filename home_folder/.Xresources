@@ -6,6 +6,8 @@ URxvt*scrollBar: false
 *.background: #000000
 *.foreground: #a2d5fa
 
+*.internalBorder: 30
+
 Xcursor.size: 24
 
 URxvt*font: xft:Monospace:pixelsize=12
