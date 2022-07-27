@@ -238,8 +238,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 # Sreen brightness controls
 #bindsym XF86MonBrightnessUp exec ~/sc/brightness.sh +7 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec ~/sc/brightness.sh -7 # decrease screen brightness
-bindsym XF86MonBrightnessUp exec light -A 15 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 15 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -290,6 +290,9 @@ exec --no-startup-id ~/sc/screen.sh
 
 # network manager
 # exec --no-startup-id nm-applet
+
+# volume icon
+exec --no-startup-id volumeicon
 
 # gaps
 gaps inner 10
