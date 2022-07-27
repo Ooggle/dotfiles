@@ -9,8 +9,8 @@ fi
 
 #display1=$(xrandr --listmonitors | grep -Eo '[A-Za-z]+\-1$' -m1)
 #display2=$(xrandr --listmonitors | grep -Eo '[A-Za-z]+\-1$' -m2 | tail -n1)
-display1=eDP-1-0
-display2=HDMI-0
+display1=eDP
+display2=HDMI-1-0
 
 if [ $1 = "dleft" ]
 then
