@@ -38,8 +38,8 @@ apt -y install xorg i3 i3blocks
 # install softwares
 apt -y install feh compton numlockx volumeicon-alsa maim scrot xclip curl wget light pulseaudio rxvt-unicode ffmpeg \
 imagemagick xserver-xorg-input-synaptics xdotool libncurses5-dev git make xdg-utils pkg-config \
-build-essential gcc-multilib vim pavucontrol lxappearance ncdu python3 python3-pip \
-python-is-python3 python2 htop neofetch xinput gsettings-desktop-schemas nemo rsync \
+build-essential gcc-multilib vim pavucontrol lxappearance ncdu python3 python3-pip
+apt -y install python-is-python3 python2 htop neofetch xinput gsettings-desktop-schemas nemo rsync \
 rofi notepadqq libnotify-bin playerctl mpv hexchat qbittorrent bat ntfs-3g gem libaio1
 apt -y install fuse
 
@@ -151,7 +151,8 @@ gem install one_gadget
 # gef
 bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 cp /root/.gdbinit /home/$target_user/.gdbinit
-chown $target_user /home/$target_user/.gdbinit
+cp /root/.gef-* /home/$target_user/
+chown $target_user: /home/$target_user/.gdbinit /home/$target_user/.gef-*
 
 # other
 echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections
