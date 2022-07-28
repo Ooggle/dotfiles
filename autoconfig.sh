@@ -40,7 +40,7 @@ apt -y install feh compton numlockx volumeicon-alsa maim scrot xclip curl wget l
 imagemagick xserver-xorg-input-synaptics xdotool libncurses5-dev git make xdg-utils pkg-config \
 build-essential gcc-multilib vim pavucontrol lxappearance ncdu python3 python3-pip \
 python-is-python3 python2 htop neofetch xinput gsettings-desktop-schemas nemo rsync \
-rofi notepadqq libnotify-bin playerctl mpv hexchat qbittorrent bat ntfs-3g
+rofi notepadqq libnotify-bin playerctl mpv hexchat qbittorrent bat ntfs-3g gem
 apt -y install fuse
 
 # config light suid
@@ -145,6 +145,14 @@ old_path=$(pwd)
 cd /opt/radare2/ && ./sys/install.sh
 cd $(pwd)
 
+# one_gadget
+gem install one_gadget
+
+# gef
+bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
+cp /root/.gdbinit /home/$target_user/.gdbinit
+chown $target_user /home/$target_user/.gdbinit
+
 # other
 echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections
 apt -y install checksec wireshark gobuster nmap exiftool binwalk foremost audacity
@@ -178,7 +186,15 @@ chown -R $target_user: usr/
 cp -ar usr/. /usr/
 
 # change PS1
-echo "PS1='\t ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> ~/.bashrc
+echo "PS1='\t ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> /home/$target_user/.bashrc
+
+# create git config
+touch /home/$target_user/.gitconfig
+chown $target_user: /home/$target_user/.gitconfig
+chmod 664 /home/$target_user/.gitconfig
+echo "[user]" >> /home/$target_user/.gitconfig
+echo -e "\temail = 33269056+Ooggle@users.noreply.github.com" >> /home/$target_user/.gitconfig
+echo -e "\tname = Ooggle" >> /home/$target_user/.gitconfig
 
 # set Brave as default x web browser
 xdg-mime default $target_browser.desktop x-scheme-handler/http
