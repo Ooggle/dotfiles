@@ -40,7 +40,7 @@ apt -y install feh compton numlockx volumeicon-alsa maim scrot xclip curl wget l
 imagemagick xserver-xorg-input-synaptics xdotool libncurses5-dev git make xdg-utils pkg-config \
 build-essential gcc-multilib vim pavucontrol lxappearance ncdu python3 python3-pip \
 python-is-python3 python2 htop neofetch xinput gsettings-desktop-schemas nemo rsync \
-rofi notepadqq libnotify-bin playerctl mpv hexchat qbittorrent bat ntfs-3g gem
+rofi notepadqq libnotify-bin playerctl mpv hexchat qbittorrent bat ntfs-3g gem libaio1
 apt -y install fuse
 
 # config light suid
@@ -155,7 +155,7 @@ chown $target_user /home/$target_user/.gdbinit
 
 # other
 echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections
-apt -y install checksec wireshark gobuster nmap exiftool binwalk foremost audacity
+apt -y install checksec wireshark gobuster nmap exiftool binwalk foremost audacity ghex dbeaver
 
 echo ""
 echo "--------------------------------------------------"
