@@ -41,7 +41,7 @@ apt -y install feh compton numlockx volumeicon-alsa maim scrot xclip curl wget l
 imagemagick xserver-xorg-input-synaptics xdotool libncurses5-dev git make xdg-utils pkg-config \
 build-essential gcc-multilib vim pavucontrol lxappearance ncdu python3 python3-pip \
 python-is-python3 python2 htop neofetch xinput gsettings-desktop-schemas nemo rsync \
-rofi notepadqq libnotify-bin playerctl mpv hexchat qbittorrent fuze bat ntfs-3g
+rofi notepadqq libnotify-bin playerctl mpv hexchat qbittorrent fuse bat ntfs-3g
 
 # config light suid
 
