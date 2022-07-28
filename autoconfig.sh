@@ -36,7 +36,6 @@ apt -y install $target_term
 apt -y install xorg i3 i3blocks
 
 # install softwares
-echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections
 apt -y install feh compton numlockx volumeicon-alsa maim scrot xclip curl wget light pulseaudio rxvt-unicode ffmpeg \
 imagemagick xserver-xorg-input-synaptics xdotool libncurses5-dev git make xdg-utils pkg-config \
 build-essential gcc-multilib vim pavucontrol lxappearance ncdu python3 python3-pip \
@@ -140,12 +139,14 @@ tar -xvf /opt/postman.tar.gz -C /opt/
 rm /opt/postman.tar.gz
 
 # radare2
-git clone https://github.com/radare/radare2
-chmod 777 -R radare2/
-cd radare2 && ./sys/install.sh
-cd .. && rm -rf radare2
+git clone https://github.com/radare/radare2 /opt/radare2
+chmod 777 -R /opt/radare2/
+old_path=$(pwd)
+cd /opt/radare2/ && ./sys/install.sh
+cd $(pwd)
 
 # other
+echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections
 apt -y install checksec wireshark gobuster nmap exiftool binwalk foremost audacity
 
 echo ""
