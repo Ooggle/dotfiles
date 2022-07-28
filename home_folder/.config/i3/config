@@ -282,11 +282,11 @@ hide_edge_borders both
 #exec_always --no-startup-id xinput set-prop 'Logitech Gaming Mouse G502' 'Coordinate Transformation Matrix' 3.800000, 0.000000, 0.000000, 0.000000, 3.800000, 0.000000, 0.000000, 0.000000, 1.000000
 # add touchpad speed
 # exec --no-startup-id xinput set-prop 16 300 0.7
-exec synclient AccelFactor=0
-exec synclient TapButton1=1
-exec synclient TapButton2=2
-exec synclient HorizTwoFingerScroll=1
-exec synclient MinSpeed=2.5
+exec_always synclient AccelFactor=0
+exec_always synclient TapButton1=1
+exec_always synclient TapButton2=2
+exec_always synclient HorizTwoFingerScroll=1
+exec_always synclient MinSpeed=2.5
 # accept touchpad tapping clic
 # exec --no-startup-id xinput set-prop 16 309 1
 
