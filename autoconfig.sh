@@ -8,9 +8,9 @@ then
 fi
 
 # change this variable to use your own terminal (default is urxvt (rxvt-unicode))
-term=lxterminal
-user=ooggle
-browser=brave-browser
+target_term=lxterminal
+target_user=ooggle
+target_browser=brave-browser
 
 # intro
 echo ""
@@ -30,7 +30,7 @@ echo ""
 # install lxterminal
 apt update
 apt -y upgrade
-apt -y install $term
+apt -y install $target_term
 
 # install base dependenciese
 apt -y install xorg i3 i3blocks
@@ -41,7 +41,8 @@ apt -y install feh compton numlockx volumeicon-alsa maim scrot xclip curl wget l
 imagemagick xserver-xorg-input-synaptics xdotool libncurses5-dev git make xdg-utils pkg-config \
 build-essential gcc-multilib vim pavucontrol lxappearance ncdu python3 python3-pip \
 python-is-python3 python2 htop neofetch xinput gsettings-desktop-schemas nemo rsync \
-rofi notepadqq libnotify-bin playerctl mpv hexchat qbittorrent fuse bat ntfs-3g
+rofi notepadqq libnotify-bin playerctl mpv hexchat qbittorrent bat ntfs-3g
+apt -y install fuse
 
 # config light suid
 
@@ -82,7 +83,7 @@ echo "--------------------------------------------------"
 echo ""
 
 # depedencies
-sudo apt -y install sassc
+apt -y install sassc
 
 git clone https://github.com/vinceliuice/vimix-gtk-themes && cd vimix-gtk-themes
 ./install.sh -t ruby
@@ -94,8 +95,8 @@ git clone https://github.com/vinceliuice/vimix-icon-theme && cd vimix-icon-theme
 cd ..
 rm -rf vimix-icon-theme
 
-sed -i 's/gtk-theme-name=.*/gtk-theme-name=vimix-dark-ruby/g' /home/$user/.config/gtk-3.0/settings.ini
-sed -i 's/gtk-icon-theme-name=.*/gtk-icon-theme-name=Vimix-Ruby-dark/g' /home/$user/.config/gtk-3.0/settings.ini
+sed -i 's/gtk-theme-name=.*/gtk-theme-name=vimix-dark-ruby/g' /home/$target_user/.config/gtk-3.0/settings.ini
+sed -i 's/gtk-icon-theme-name=.*/gtk-icon-theme-name=Vimix-Ruby-dark/g' /home/$target_user/.config/gtk-3.0/settings.ini
 
 echo ""
 echo "--------------------------------------------------"
@@ -168,21 +169,21 @@ chown -R root: etc/
 cp -ar etc/. /etc/
 
 chmod -R 755 home_folder/
-chown -R $user: home_folder/
-cp -ar home_folder/. /home/$user/
+chown -R $target_user: home_folder/
+cp -ar home_folder/. /home/$target_user/
 
 chmod -R 755 usr/
-chown -R $user: usr/
+chown -R $target_user: usr/
 cp -ar usr/. /usr/
 
 # change PS1
 echo "PS1='\t ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> ~/.bashrc
 
 # set Brave as default x web browser
-xdg-mime default $browser.desktop x-scheme-handler/http
+xdg-mime default $target_browser.desktop x-scheme-handler/http
 
 # set nemo "open in terminal context menu"
-ln -fs $(which $term) /etc/alternatives/x-terminal-emulator
+ln -fs $(which $target_term) /etc/alternatives/x-terminal-emulator
 
 #CURRENTDIR=$(pwd)
 #cd ..
