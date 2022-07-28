@@ -41,7 +41,7 @@ apt -y install feh compton numlockx volumeicon-alsa maim scrot xclip curl wget l
 imagemagick xserver-xorg-input-synaptics xdotool libncurses5-dev git make xdg-utils pkg-config \
 build-essential gcc-multilib vim pavucontrol lxappearance ncdu python3 python3-pip \
 python-is-python3 python2 htop neofetch xinput gsettings-desktop-schemas nemo rsync \
-rofi notepadqq libnotify-bin playerctl mpv hexchat qbittorrent fuze bat
+rofi notepadqq libnotify-bin playerctl mpv hexchat qbittorrent fuze bat ntfs-3g
 
 # config light suid
 
@@ -130,13 +130,19 @@ rm ./msfinstall
 # ROPgadget
 python3 -m pip install -G ROPgadget
 
-# Python 3 tools
+# Python 3 libs
 python3 -m pip install Flask pwntools numpy pytesseract beautifulsoup4 pandas Pillow Scrapy asyncio pysqlite3 pipenv sagemath
 
 # Postman
 wget https://dl.pstmn.io/download/latest/linux64 -O /opt/postman.tar.gz
 tar -xvf /opt/postman.tar.gz -C /opt/
 rm /opt/postman.tar.gz
+
+# radare2
+git clone https://github.com/radare/radare2
+chmod 777 -R radare2/
+cd radare2 && ./sys/install.sh
+cd .. && rm -rf radare2
 
 # other
 apt -y install checksec wireshark gobuster nmap exiftool binwalk foremost audacity
