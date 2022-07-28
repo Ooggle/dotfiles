@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# check for root
+if [ "$EUID" -ne 0 ]
+then
+    echo -e "\x1b[1m[\x1b[31m-\x1b[0m] This script must be run as root!"
+    exit
+fi
+
 # change this variable to use your own terminal (default is urxvt (rxvt-unicode))
 term=lxterminal
 user=ooggle
@@ -25,15 +32,16 @@ apt update
 apt -y upgrade
 apt -y install $term
 
-# install base dependencies
+# install base dependenciese
 apt -y install xorg i3 i3blocks
 
-# install dependencies
-apt -y install feh maim scrot xclip curl wget light pulseaudio rxvt-unicode ffmpeg \
-imagemagick xdotool libncurses5-dev git make xdg-utils pkg-config \
-build-essential vim pavucontrol lxappearance ncdu python3 python3-pip \
-python-is-python3 python2 xinput gsettings-desktop-schemas nemo rsync \
-rofi notepadqq libnotify-bin playerctl mpv
+# install softwares
+echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections
+apt -y install feh compton numlockx volumeicon-alsa maim scrot xclip curl wget light pulseaudio rxvt-unicode ffmpeg \
+imagemagick xserver-xorg-input-synaptics xdotool libncurses5-dev git make xdg-utils pkg-config \
+build-essential gcc-multilib vim pavucontrol lxappearance ncdu python3 python3-pip \
+python-is-python3 python2 htop neofetch xinput gsettings-desktop-schemas nemo rsync \
+rofi notepadqq libnotify-bin playerctl mpv hexchat qbittorrent fuze bat
 
 # config light suid
 
@@ -47,7 +55,7 @@ echo "              - Installing i3 Gaps -"
 echo "--------------------------------------------------"
 echo ""
 
-apt -y install i3 meson libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev \
+apt -y install i3 i3blocks meson libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev \
 libxcb-util0-dev libxcb-icccm4-dev libyajl-dev \
 libstartup-notification0-dev libxcb-randr0-dev \
 libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \
@@ -58,6 +66,7 @@ git clone https://www.github.com/Airblader/i3 && cd i3
 mkdir -p build && cd build
 meson ..
 ninja
+install ./i3 /bin/i3
 cd ../..
 rm -rf i3
 
@@ -98,6 +107,39 @@ apt -y install apt-transport-https curl
 curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
 apt update && apt -y install brave-browser
+
+echo ""
+echo "--------------------------------------------------"
+echo "          - Installing Cybersec tools -"
+echo "--------------------------------------------------"
+echo ""
+
+# Cutter
+wget https://github.com/rizinorg/cutter/releases/download/v2.1.0/Cutter-v2.1.0-Linux-x86_64.AppImage -O cutter
+chmod +x ./cutter
+install ./cutter /usr/bin/cutter
+rm ./cutter
+
+# metasploit
+apt -y install postgresql postgresql-contrib
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
+chmod +x msfinstall
+./msfinstall
+rm ./msfinstall
+
+# ROPgadget
+python3 -m pip install -G ROPgadget
+
+# Python 3 tools
+python3 -m pip install Flask pwntools numpy pytesseract beautifulsoup4 pandas Pillow Scrapy asyncio pysqlite3 pipenv sagemath
+
+# Postman
+wget https://dl.pstmn.io/download/latest/linux64 -O /opt/postman.tar.gz
+tar -xvf /opt/postman.tar.gz -C /opt/
+rm /opt/postman.tar.gz
+
+# other
+apt -y install checksec wireshark gobuster nmap exiftool binwalk foremost audacity
 
 echo ""
 echo "--------------------------------------------------"
