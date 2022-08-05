@@ -1,16 +1,17 @@
-URxvt*transparent: true
-URxvt*shading: 10
+!URxvt*transparent: true
+!URxvt*shading: 5
 
 URxvt*scrollBar: false
 
-*.background: #000000
-*.foreground: #a2d5fa
+URxvt.depth: 32
+*.background: [96]#1c1e23
+*.foreground: #d8dee9
 
-*.internalBorder: 30
+*.internalBorder: 14
 
 Xcursor.size: 24
 
-URxvt*font: xft:Monospace:pixelsize=12
+URxvt*font: xft:Monospace:pixelsize=16
 
 URxvt*keysym*Control-Up: \033[1;5A
 URxvt*keysym*Control-Down: \033[1;5B
@@ -19,3 +20,37 @@ URxvt*keysym*Control-Right: \033[1;5C
 
 URxvt*keysym.Shift-Control-V: eval:paste_clipboard
 URxvt*keysym.Shift-Control-C: eval:selection_to_clipboard
+
+
+! 16 color space
+! Black, Gray, Silver, White
+*color0: #2e3440
+*color8: #4c566a
+
+! Red
+*color1: #bf616a
+*color9: #bf616a
+
+! Green
+*color2: #a3be8c
+*color10: #a3be8c
+
+! Yellow
+*color3: #ebcb8b
+*color11: #ebcb8b
+
+! Blue
+*color4: #81a1c1
+*color12: #81a1c1
+
+! Magenta
+*color5: #b48ead
+*color13: #b48ead
+
+! Cyan
+*color6: #88c0d0
+*color14: #8fbcbb
+
+! White
+*color7: #e5e9f0
+*color15: #eceff4
